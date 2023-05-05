@@ -19,7 +19,7 @@ This application is an excellent choice for circumventing rate and IP limits.
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/infinit-ip-changer.git
+git clone https://github.com/tahaontech/infinit-ip-changer.git
 ```
 
 2. Install the dependencies:
