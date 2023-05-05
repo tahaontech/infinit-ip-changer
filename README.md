@@ -22,41 +22,34 @@ This application is an excellent choice for circumventing rate and IP limits.
 git clone https://github.com/tahaontech/infinit-ip-changer.git
 ```
 
-2. Install the dependencies:
+2. build the image:
 
 ```bash
 cd infinit-ip-changer
+docker build . -t ip-changer
 ```
 
 ## Usage
 
-### Proxy
-
-To use the proxy, start the server:
+To use the proxy and api, start the server:
 
 ```bash
-# run command
+docker run -p 8118:8118 -p 5000:5000 ip-changer
 ```
 
-By default, the server will listen on port 8000. You can change this by setting the `PORT` environment variable.
+### Proxy
 
 To use the proxy, set your browser or application to use the following URL:
 
 ```
-http://localhost:3000
+http://localhost:8118
 ```
 
-The server will randomly select a proxy IP address from a list of available IP addresses every time you make a request.
+The server will randomly select an IP address from tor network available IP addresses.
 
 ### API
 
-To use the API, start the server:
-
-```bash
-npm run api
-```
-
-By default, the server will listen on port 3001. You can change this by setting the `PORT` environment variable.
+By default, the server will listen on port 5000.
 
 The API provides a single endpoint:
 
@@ -64,7 +57,7 @@ The API provides a single endpoint:
 GET /changeip
 ```
 
-This endpoint returns a random proxy IP address from a list of available IP addresses.
+This endpoint renew your tor connection and return you the new IP address.
 
 ## Contributing
 
